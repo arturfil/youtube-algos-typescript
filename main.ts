@@ -1,16 +1,40 @@
+import { CreateRandomArray } from "./Helpers/CreateRandomArray";
 import { Recursion } from "./Recursion/Recursion";
+import { BinarySearch } from "./Search/BinarySearch";
 import { BubbleSort } from "./Sorting/BubbleSort";
+import { MergeSort } from './Sorting/MergeSort';
+import { QuickSort } from "./Sorting/QuickSort";
 
 class Main {
     
     main(args?: string[]) {
-       
-        let rec = new Recursion();
-        // console.log(rec.sumMinusOne(4)); // 10
-        // console.log(rec.factorial(4));
+        
+        // Create Random Array
+        // let createRndArr = new CreateRandomArray();
+        // let random = createRndArr.generateRandomArray(100000);
+        // console.log("Shuffeld Array");
+        // console.log(random);
 
-        let bubble = new BubbleSort();
-        bubble.sort([9,3,4,5,1,7,11])
+        let test:number[] = [];
+        for (let i = 0; i < 10000000; i++) {
+            test.push(i);
+        }
+
+        // Sort Array
+        // let merge = new MergeSort();
+        // console.log("Sorted Array")
+        // random = merge.mergeSort(random);
+        // console.log(random);
+        
+        
+        // Search
+        let bin = new BinarySearch();
+        console.log( bin.binarySearch(test, 1100198) );
+        // console.log(bin.sequentialSeach(test, 1100198));
+        
+
+
+
     }
 }
 
