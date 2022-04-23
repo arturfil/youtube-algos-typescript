@@ -1,3 +1,4 @@
+import { TreeNode } from "./BinaryTrees/TreeNode";
 import { CreateRandomArray } from "./Helpers/CreateRandomArray";
 import { Recursion } from "./Recursion/Recursion";
 import { BinarySearch } from "./Search/BinarySearch";
@@ -9,33 +10,28 @@ class Main {
     
     main(args?: string[]) {
         
-        // Create Random Array
-        // let createRndArr = new CreateRandomArray();
-        // let random = createRndArr.generateRandomArray(100000);
-        // console.log("Shuffeld Array");
-        // console.log(random);
+        let root:TreeNode = new TreeNode(6);
+        let l_n1 = new TreeNode(3);
+        let l_n2 = new TreeNode(2);
+        let l_n3 = new TreeNode(5);
+            
+        let r_n1 = new TreeNode(8);
+        let r_n2 = new TreeNode(12);
+        let r_n3 = new TreeNode(9);
 
-        let test:number[] = [];
-        for (let i = 0; i < 10000000; i++) {
-            test.push(i);
-        }
+        // left side of tree
+        root.left = l_n1;
+        l_n1.left = l_n2;
+        l_n1.right = l_n3;
 
-        // Sort Array
-        // let merge = new MergeSort();
-        // console.log("Sorted Array")
-        // random = merge.mergeSort(random);
-        // console.log(random);
+        // right side of tree
+        root.right = r_n1;
+        r_n1.right = r_n2;
+        r_n2.left = r_n3;
         
-        
-        // Search
-        let bin = new BinarySearch();
-        console.log( bin.binarySearch(test, 1100198) );
-        // console.log(bin.sequentialSeach(test, 1100198));
-        
-
-
-
+        root.printTree(root);
     }
+
 }
 
 const program = new Main();
