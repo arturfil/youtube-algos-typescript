@@ -29,6 +29,19 @@ class Main {
         r_n1.right = r_n2;
         r_n2.left = r_n3;
         
+        // root.printTree(root);
+        console.log("---- Add Node ---");
+        let new_node = new TreeNode(11)
+        root.addToTree(new_node, root);
+        root.printTree(root);
+        // console.log("Node", r_n3.right!.val);
+        
+        console.log("--- Find Node ---");
+        let found = root.findNode(12, root);
+        console.log(found ? found.val : found);
+
+        console.log("--- Delete Node ---");
+        root.deleteFromTree(12, root)
         root.printTree(root);
     }
 
