@@ -1,48 +1,33 @@
-import { TreeNode } from "./BinaryTrees/TreeNode";
-import { CreateRandomArray } from "./Helpers/CreateRandomArray";
-import { Recursion } from "./Recursion/Recursion";
-import { BinarySearch } from "./Search/BinarySearch";
-import { BubbleSort } from "./Sorting/BubbleSort";
-import { MergeSort } from './Sorting/MergeSort';
-import { QuickSort } from "./Sorting/QuickSort";
+import { ListNode } from "./LinkedLists/ListNode";
+
 
 class Main {
     
     main(args?: string[]) {
         
-        let root:TreeNode = new TreeNode(6);
-        let l_n1 = new TreeNode(3);
-        let l_n2 = new TreeNode(2);
-        let l_n3 = new TreeNode(5);
-            
-        let r_n1 = new TreeNode(8);
-        let r_n2 = new TreeNode(12);
-        let r_n3 = new TreeNode(9);
+        let head = new ListNode(3);
+        let l1 = new ListNode(4);
+        let l2 = new ListNode(5);
+        let l3 = new ListNode(8);
+        let l4 = new ListNode(7);
 
-        // left side of tree
-        root.left = l_n1;
-        l_n1.left = l_n2;
-        l_n1.right = l_n3;
+        head.next = l1
+        l1.next = l2;
+        l2.next = l3;
+        l3.next = l4;
 
-        // right side of tree
-        root.right = r_n1;
-        r_n1.right = r_n2;
-        r_n2.left = r_n3;
-        
-        // root.printTree(root);
-        console.log("---- Add Node ---");
-        let new_node = new TreeNode(11)
-        root.addToTree(new_node, root);
-        root.printTree(root);
-        // console.log("Node", r_n3.right!.val);
-        
-        console.log("--- Find Node ---");
-        let found = root.findNode(12, root);
-        console.log(found ? found.val : found);
+        // Delete ListNode "l2", l2.val = |5|
+        l1.next=l3;
+        l2.next = null;
 
-        console.log("--- Delete Node ---");
-        root.deleteFromTree(12, root)
-        root.printTree(root);
+        // Add 13 between l1.val = 4 and l3.val = 8
+        let l5 = new ListNode(13);
+        l1.next = l5;
+        l5.next = l3;
+
+        // |3|->|4|->|13|->|8|->|7|
+        head.printLinkedList(head);
+
     }
 
 }

@@ -1,3 +1,40 @@
+/*
+    NOTES: Create a binary tree
+    let root:TreeNode = new TreeNode(6);
+    let l_n1 = new TreeNode(3);
+    let l_n2 = new TreeNode(2);
+    let l_n3 = new TreeNode(5);
+        
+    let r_n1 = new TreeNode(8);
+    let r_n2 = new TreeNode(12);
+    let r_n3 = new TreeNode(9);
+
+    // left side of tree
+    root.left = l_n1;
+    l_n1.left = l_n2;
+    l_n1.right = l_n3;
+
+    // right side of tree
+    root.right = r_n1;
+    r_n1.right = r_n2;
+    r_n2.left = r_n3;
+    
+    // root.printTree(root);
+    console.log("---- Add Node ---");
+    let new_node = new TreeNode(11)
+    root.addToTree(new_node, root);
+    root.printTree(root);
+    // console.log("Node", r_n3.right!.val);
+    
+    console.log("--- Find Node ---");
+    let found = root.findNode(12, root);
+    console.log(found ? found.val : found);
+
+    console.log("--- Delete Node ---");
+    root.deleteFromTree(12, root)
+    root.printTree(root);
+*/
+
 export class TreeNode {
     val: number | null;
     left: TreeNode | null;
