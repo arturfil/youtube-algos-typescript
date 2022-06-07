@@ -1,35 +1,43 @@
-import { ListNode } from "./LinkedLists/ListNode";
-
+import { Queue } from "./Queue/Queue";
 
 class Main {
+  main(args?: string[]) {
     
-    main(args?: string[]) {
-        
-        let head = new ListNode(3);
-        let l1 = new ListNode(4);
-        let l2 = new ListNode(5);
-        let l3 = new ListNode(8);
-        let l4 = new ListNode(7);
+    let laptops:Set<string> = new Set(["macbook", "dell"]);
 
-        head.next = l1
-        l1.next = l2;
-        l2.next = l3;
-        l3.next = l4;
 
-        // Delete ListNode "l2", l2.val = |5|
-        l1.next=l3;
-        l2.next = null;
+    let laptopsOnEbay = [
+        "macbook",
+        "macbook",
+        "dell",
+        "macbook",
+        "macbook",
+        "chromebook",
+        "razer",
+        "macbook",
+        "macbook",
+        "macbook",
+        "razer"
+    ]
 
-        // Add 13 between l1.val = 4 and l3.val = 8
-        let l5 = new ListNode(13);
-        l1.next = l5;
-        l5.next = l3;
-
-        // |3|->|4|->|13|->|8|->|7|
-        head.printLinkedList(head);
-
+    let repeatedProducts = 0;
+    for (let i = 0; i < laptopsOnEbay.length; i++) {
+        let key = laptopsOnEbay[i];
+        if (!laptops.has(key)) {
+            laptops.add(key)
+        } else {
+            repeatedProducts += 1;
+        }
     }
 
+    if (laptops.has("razer")) {
+        console.log("we do have razers");
+    }
+
+    console.log(laptops)
+    console.log(`We have ${repeatedProducts} repeated products`);
+
+  }
 }
 
 const program = new Main();
