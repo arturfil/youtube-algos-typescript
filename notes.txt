@@ -1,0 +1,48 @@
+ let laptops:Set<string> = new Set(["macbook", "dell"]);
+
+
+    let laptopsOnEbay = [
+        "macbook",
+        "macbook",
+        "dell",
+        "macbook",
+        "macbook",
+        "chromebook",
+        "razer",
+        "macbook",
+        "macbook",
+        "macbook",
+        "razer"
+    ]
+
+    let repeatedProducts = 0;
+    for (let i = 0; i < laptopsOnEbay.length; i++) {
+        let key = laptopsOnEbay[i];
+        if (!laptops.has(key)) {
+            laptops.add(key)
+        } else {
+            repeatedProducts += 1;
+        }
+    }
+
+    if (laptops.has("razer")) {
+        console.log("we do have razers");
+    }
+
+    console.log(laptops)
+    console.log(`We have ${repeatedProducts} repeated products`);
+
+    --- DFS & BFS ---
+
+    let maze = [
+        ["1","0","0","0","1"],
+        ["0","1","0","1","0"],
+        ["0","0","1","0","0"],
+        ["0","0","1","1","0"]
+    ]
+
+    // let bfs = new BFS();
+    // console.log(bfs.findShortesBfs(maze));
+
+    let dfs = new DFS();
+    console.log(dfs.numberOfIslands(maze)); // 3
